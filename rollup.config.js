@@ -53,16 +53,8 @@ export default {
         //     exclude: 'node_modules/**',
         //     transforms: {forOf: false}
         // }),
-        // async(),
-        // babel({
-        //     // exclude: 'node_modules/**',
-        //     // presets: [
-        //     //     'es2015-rollup', "stage-0"
-        //     // ]
-        // }),
-        // uglify({
-        //     mangle: false
-        // }),
+        async(),
+        babel(),
         alias({
             bp_logger: path.join(__dirname,'node_modules/bp_logger/logger.js'),
             bp_event: path.join(__dirname,'node_modules/bp_event/event.js'),

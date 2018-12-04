@@ -27,13 +27,8 @@ export class RTSPStream {
         this.track = null;
     }
 
-    start(lastSetupPromise = null) {
-        if (lastSetupPromise != null) {
-            // if a setup was already made, use the same session
-            return lastSetupPromise.then((obj) => this.sendSetup(obj.session))
-        } else {
-            return this.sendSetup();
-        }
+    start() {
+        return this.sendSetup();
     }
 
     stop() {

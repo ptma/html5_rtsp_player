@@ -44,6 +44,8 @@
   },
   "devDependencies": {
     "babel-preset-es2015-rollup": "^3.0.0",
+    "babel-preset-es2015": "^6.0.15",
+    "babel-preset-stage-0": "^6.0.15",
     "rollup": "^0.33.2",
     "rollup-plugin-alias": "^1.4.0",
     "rollup-plugin-async": "^1.2.0",

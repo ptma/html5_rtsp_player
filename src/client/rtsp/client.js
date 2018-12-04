@@ -428,7 +428,6 @@ export class RTSPClientSM extends StateMachine {
 
     sendSetup() {
         let streams=[];
-        let lastPromise = null;
 
         // TODO: select first video and first audio tracks
         for (let track_type of this.tracks) {
@@ -439,8 +438,7 @@ export class RTSPClientSM extends StateMachine {
             if (!PayloadType.string_map[track.rtpmap[track.fmt[0]].name]) continue;
 
             this.streams[track_type] = new RTSPStream(this, track);
-            let setupPromise = this.streams[track_type].start(lastPromise);
-            lastPromise = setupPromise;
+            let setupPromise = this.streams[track_type].start();
             this.parent.sampleQueues[PayloadType.string_map[track.rtpmap[track.fmt[0]].name]]=[];
             this.rtpBuffer[track.fmt[0]]=[];
             streams.push(setupPromise.then(({track, data})=>{
@@ -559,8 +557,6 @@ export class RTSPClientSM extends StateMachine {
                     // } else {
                     //     this.parent.sampleQueues[rtp.type].push([pay]);
                     // }
-                } else {
-                    this.parent.sampleQueues[rtp.type].push(pay);
                 }
             }
         }
