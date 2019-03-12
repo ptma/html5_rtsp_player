@@ -10,5 +10,9 @@ export default
     },
     format: "umd",
     sourceMap: true,
-    plugins: [ async(),babel(),butternut() ]
+    plugins: [
+        //async(),
+        babel()
+        //,butternut()
+    ]
 }

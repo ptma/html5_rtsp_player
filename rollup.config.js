@@ -53,7 +53,7 @@ export default {
         //     exclude: 'node_modules/**',
         //     transforms: {forOf: false}
         // }),
-        async(),
+        //async(),
         babel(),
         alias({
             bp_logger: path.join(__dirname,'node_modules/bp_logger/logger.js'),
