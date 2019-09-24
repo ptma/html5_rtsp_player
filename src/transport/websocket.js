@@ -124,10 +124,6 @@ class WSPProtocol {
     }
 
     static parse(data) {
-        if(typeof(data) != "string") {
-            console.log(data);
-            return null;
-        }
         let payIdx = data.indexOf('\r\n\r\n');
         let lines = data.substr(0, payIdx).split('\r\n');
         let hdr = lines.shift().match(new RegExp(`${WSPProtocol.PROTO}/${WSPProtocol.V1_1}\\s+(\\d+)\\s+(.+)`));

@@ -237,7 +237,8 @@ export class SDPParser {
                 }
 
                 media.fmtp = {};
-                for (var param of matches[2].split(';')) {
+                var param;
+                for (param of matches[2].split(';')) {
                     var idx = param.indexOf('=');
                     media.fmtp[param.substr(0, idx).toLowerCase().trim()] = param.substr(idx + 1).trim();
                 }
@@ -260,7 +261,8 @@ export class SDPParser {
     }
 
     getMediaBlockByPayloadType(pt) {
-        // for (var m in this.media) {
+        // var m;
+        // for (m in this.media) {
         //     if (-1 !== this.media[m].fmt.indexOf(pt)) {
         //         return this.media[m];
         //     }
@@ -275,10 +277,10 @@ export class SDPParser {
 
     getMediaBlockList() {
         var res = [];
-        for (var m in this.media) {
+        var m;
+        for (m in this.media) {
             res.push(m);
         }
-
         return res;
     }
 }

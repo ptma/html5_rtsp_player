@@ -165,7 +165,8 @@ function wspMsg(code,msg,seq,data,play){
     var msg = "WSP/1.1 " + code + " " + msg + "\r\n";
     msg += "seq:" + seq ;
     if(data) {
-        for (var i in data) {
+        var i;
+        for (i in data) {
             msg += "\r\n";
             msg += i.toString() + ":" + data[i].toString();
         }
